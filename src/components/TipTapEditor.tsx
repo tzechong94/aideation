@@ -58,21 +58,29 @@ const TipTapEditor = ({ note }: Props) => {
 
   const lastCompletion = React.useRef("");
 
-  const token = React.useMemo(() => {
-    if (!completion) return;
-    const diff = completion.slice(lastCompletion.current.length);
-    lastCompletion.current = completion;
-    return diff;
-  }, [completion]);
+  //   const token = React.useMemo(() => {
+  //     if (!completion) return;
+  //     if (lastCompletion.current === undefined) {
+  //       lastCompletion.current = "";
+  //     }
+
+  //     const diff = completion.slice(lastCompletion.current.length);
+  //     console.log("last completion", lastCompletion.current);
+  //     console.log("diff", diff);
+  //     lastCompletion.current = completion;
+  //     return diff;
+  //   }, [completion]);
 
   React.useEffect(() => {
     // get individual word to insert into editor
-    if (!editor || !token) return;
+    if (!editor || !completion) return;
+    const diff = completion.slice(lastCompletion.current.length);
+    lastCompletion.current = completion;
 
-    console.log(token);
-    editor.commands.insertContent(token);
-    console.log(completion);
-  }, [token, editor]);
+    // console.log("token", token);
+    editor.commands.insertContent(diff);
+    // console.log(completion);
+  }, [completion, editor]);
 
   const debounceEditorState = useDebounce(editorState, 500);
 

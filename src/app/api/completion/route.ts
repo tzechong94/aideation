@@ -32,8 +32,9 @@ export async function POST(req: Request) {
       {
         role: "user",
         content: `I am writing a piece of text in a notion text editor app. 
-          Help me complete my train of thought here: ##${prompt}##
-          Keep the tone of the text consistent with the rest of the text. Keep the response short and sweet.`,
+          Help me complete my sentence here: ##${prompt}##
+          Keep the tone of the text consistent with the rest of the text. Keep the response short and sweet. Remember don't repeat my prompt, 
+          it's supposed to be sentence autocomplete. Try to be grammatically correct when completeing my sentence.`,
       },
     ],
   });
