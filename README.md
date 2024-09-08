@@ -34,3 +34,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Notes
+
+useRef - useRef is a React hook that creates a mutable object with a .current property that persists across renders.
+Does not cause re-renders: Updating the .current property does not re-render the component.
+Persists across renders: The value in .current remains the same between renders unless explicitly changed.
+Mutable object: You can freely read and update .current without performance concerns.
+
+useMemo -> run callback only when dependencies change, not when rerender, This makes useMemo useful for avoiding unnecessary recalculations, especially for expensive operations.
