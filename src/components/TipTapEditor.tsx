@@ -106,9 +106,17 @@ const TipTapEditor = ({ note }: Props) => {
         </Button>
       </div>
 
-      <div className="prose text-gray-600">
+      <div className="prose prose-sm w-full mt-4 text-gray-600">
         <EditorContent editor={editor} />
       </div>
+      <div className="h-4"></div>
+      <span className="text-sm">
+        Tip: Press{" "}
+        <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">
+          Shift + A
+        </kbd>{" "}
+        for AI autocomplete
+      </span>
     </>
   );
 };
