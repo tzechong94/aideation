@@ -13,7 +13,10 @@ const TypewriterTitle = (props: Props) => {
           .typeString("Supercharge Productivity.")
           .pauseFor(1000)
           .deleteAll()
-          .typeString("AI-powered Insights.")
+          .typeString("Easy to use editor.")
+          .pauseFor(1000)
+          .deleteAll()
+          .typeString("AI auto completion.")
           .pauseFor(1000)
           .deleteAll()
           .start();
